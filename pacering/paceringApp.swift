@@ -1,32 +1,21 @@
-//
-//  paceringApp.swift
-//  pacering
-//
-//  Created by Chengyi Xu on 5/19/24.
-//
-
 import SwiftUI
-import SwiftData
 
 @main
-struct paceringApp: App {
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
-        do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-        } catch {
-            fatalError("Could not create ModelContainer: \(error)")
-        }
-    }()
+struct PaceringApp: App {
+    var activityLogger = ActivityLogger()
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if #available(macOS 13.0, *) {
+                ContentView(activityLogger: activityLogger)
+                    .background(Color.white)
+                    .onAppear {
+                        activityLogger.startLogging(withInterval: 1.0)
+                        activityLogger.startPeriodicChecks()  // Start periodic checks
+                    }
+            } else {
+                // Fallback on earlier versions
+            }
         }
-        .modelContainer(sharedModelContainer)
     }
 }

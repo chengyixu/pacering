@@ -1,0 +1,175 @@
+# Pacering
+
+A macOS productivity tracking application that monitors your work time and helps you achieve your daily goals.
+
+[中文版本](#中文)
+
+## Features
+
+- **Automatic Time Tracking**: Monitors active applications and tracks time spent
+- **Work Apps Selection**: Choose which applications count towards your work time
+- **Daily Goals**: Set and track daily work hour targets
+- **Visual Progress**: Clean progress circle visualization showing daily achievement
+- **History View**: Review your productivity patterns over the past 30 days
+- **Auto-start Support**: Can be configured to start automatically with macOS
+- **Privacy-focused**: All data stored locally on your device
+
+## Screenshots
+
+### Main Interface
+- Today view: Hourly breakdown of application usage
+- Progress circle showing daily goal achievement
+- Historical data visualization
+
+## Requirements
+
+- macOS 13.0 or later
+- Xcode 14.0 or later (for building from source)
+
+## Installation
+
+### Option 1: Build from Source
+
+1. Clone the repository:
+```bash
+git clone https://github.com/chengyixu/pacering.git
+cd pacering
+```
+
+2. Open in Xcode:
+```bash
+open pacering.xcodeproj
+```
+
+3. Build and run (Cmd+R)
+
+### Option 2: Download Release
+
+Download the latest release from the [Releases](https://github.com/chengyixu/pacering/releases) page.
+
+## Usage
+
+1. **First Launch**: Grant accessibility permissions when prompted
+2. **Set Work Apps**: Navigate to "Work Apps" and select applications that count as work
+3. **Set Daily Goal**: In Profile view, set your target work hours
+4. **Track Progress**: The app will automatically track time spent in work applications
+
+## Privacy & Permissions
+
+Pacering requires accessibility permissions to monitor active applications. All data is stored locally using UserDefaults. No data is sent to external servers.
+
+## Development
+
+### Architecture
+
+- Built with SwiftUI and Combine
+- Uses NSWorkspace for application monitoring
+- Persistent storage via UserDefaults
+- Timer-based monitoring with configurable intervals
+
+### Building
+
+```bash
+# Build
+xcodebuild -project pacering.xcodeproj -scheme pacering build
+
+# Run tests
+xcodebuild -project pacering.xcodeproj -scheme pacering test
+```
+
+## License
+
+[Add your license information here]
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+---
+
+<a name="中文"></a>
+
+# Pacering
+
+一款 macOS 生产力追踪应用，监控您的工作时间并帮助您实现每日目标。
+
+## 功能特点
+
+- **自动时间追踪**：监控活跃应用程序并记录使用时间
+- **工作应用选择**：选择哪些应用程序计入您的工作时间
+- **每日目标**：设定并追踪每日工作小时目标
+- **可视化进度**：清晰的进度圆环显示每日完成度
+- **历史记录**：查看过去 30 天的生产力模式
+- **开机自启支持**：可配置随 macOS 自动启动
+- **隐私优先**：所有数据本地存储在您的设备上
+
+## 截图
+
+### 主界面
+- 今日视图：应用使用时间的小时分解
+- 进度圆环显示每日目标完成情况
+- 历史数据可视化
+
+## 系统要求
+
+- macOS 13.0 或更高版本
+- Xcode 14.0 或更高版本（用于从源码构建）
+
+## 安装
+
+### 方式一：从源码构建
+
+1. 克隆仓库：
+```bash
+git clone https://github.com/chengyixu/pacering.git
+cd pacering
+```
+
+2. 在 Xcode 中打开：
+```bash
+open pacering.xcodeproj
+```
+
+3. 构建并运行（Cmd+R）
+
+### 方式二：下载发布版本
+
+从 [Releases](https://github.com/chengyixu/pacering/releases) 页面下载最新版本。
+
+## 使用方法
+
+1. **首次启动**：在提示时授予辅助功能权限
+2. **设置工作应用**：进入"工作应用"页面，选择计为工作的应用程序
+3. **设定每日目标**：在个人资料视图中，设置您的目标工作小时数
+4. **追踪进度**：应用将自动追踪在工作应用程序中花费的时间
+
+## 隐私与权限
+
+Pacering 需要辅助功能权限来监控活跃的应用程序。所有数据使用 UserDefaults 本地存储。不会向外部服务器发送任何数据。
+
+## 开发
+
+### 架构
+
+- 使用 SwiftUI 和 Combine 构建
+- 使用 NSWorkspace 进行应用程序监控
+- 通过 UserDefaults 实现持久化存储
+- 基于定时器的监控，可配置监控间隔
+
+### 构建
+
+```bash
+# 构建
+xcodebuild -project pacering.xcodeproj -scheme pacering build
+
+# 运行测试
+xcodebuild -project pacering.xcodeproj -scheme pacering test
+```
+
+## 许可证
+
+[在此添加您的许可证信息]
+
+## 贡献
+
+欢迎贡献！请随时提交 Pull Request。

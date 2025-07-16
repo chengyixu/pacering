@@ -15,6 +15,7 @@
 		8A2928112BF97E1A00B7864A /* paceringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2928102BF97E1A00B7864A /* paceringTests.swift */; };
 		8A29281B2BF97E1A00B7864A /* paceringUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A29281A2BF97E1A00B7864A /* paceringUITests.swift */; };
 		8A29281D2BF97E1A00B7864A /* paceringUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A29281C2BF97E1A00B7864A /* paceringUITestsLaunchTests.swift */; };
+		8A9B64232C4F9B050032320A /* WorkAppsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9B64222C4F9B050032320A /* WorkAppsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,10 +33,24 @@
 			remoteGlobalIDString = 8A2927F82BF97E1800B7864A;
 			remoteInfo = pacering;
 		};
+		8A5CAB672C85C0A400773882 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A2927F12BF97E1800B7864A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A5CAB572C85C0A200773882;
+			remoteInfo = "Pacering Helper";
+		};
+		8A5CAB712C85C0A400773882 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A2927F12BF97E1800B7864A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A5CAB572C85C0A200773882;
+			remoteInfo = "Pacering Helper";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8A2927F92BF97E1800B7864A /* pacering.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pacering.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A2927F92BF97E1800B7864A /* Pacering.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pacering.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A2927FC2BF97E1800B7864A /* paceringApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = paceringApp.swift; sourceTree = "<group>"; };
 		8A2927FE2BF97E1800B7864A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8A2928002BF97E1800B7864A /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
@@ -47,6 +62,10 @@
 		8A2928162BF97E1A00B7864A /* paceringUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = paceringUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A29281A2BF97E1A00B7864A /* paceringUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = paceringUITests.swift; sourceTree = "<group>"; };
 		8A29281C2BF97E1A00B7864A /* paceringUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = paceringUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8A5CAB582C85C0A200773882 /* Pacering Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pacering Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A5CAB662C85C0A400773882 /* Pacering HelperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pacering HelperTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A5CAB702C85C0A400773882 /* Pacering HelperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pacering HelperUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A9B64222C4F9B050032320A /* WorkAppsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkAppsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +90,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8A5CAB552C85C0A200773882 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A5CAB632C85C0A400773882 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A5CAB6D2C85C0A400773882 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -87,9 +127,12 @@
 		8A2927FA2BF97E1800B7864A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8A2927F92BF97E1800B7864A /* pacering.app */,
+				8A2927F92BF97E1800B7864A /* Pacering.app */,
 				8A29280C2BF97E1A00B7864A /* paceringTests.xctest */,
 				8A2928162BF97E1A00B7864A /* paceringUITests.xctest */,
+				8A5CAB582C85C0A200773882 /* Pacering Helper.app */,
+				8A5CAB662C85C0A400773882 /* Pacering HelperTests.xctest */,
+				8A5CAB702C85C0A400773882 /* Pacering HelperUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,6 +142,7 @@
 			children = (
 				8A2927FC2BF97E1800B7864A /* paceringApp.swift */,
 				8A2927FE2BF97E1800B7864A /* ContentView.swift */,
+				8A9B64222C4F9B050032320A /* WorkAppsView.swift */,
 				8A2928002BF97E1800B7864A /* Item.swift */,
 				8A2928022BF97E1A00B7864A /* Assets.xcassets */,
 				8A2928042BF97E1A00B7864A /* pacering.entitlements */,
@@ -135,9 +179,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8A2927F82BF97E1800B7864A /* pacering */ = {
+		8A2927F82BF97E1800B7864A /* Pacering */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8A2928202BF97E1A00B7864A /* Build configuration list for PBXNativeTarget "pacering" */;
+			buildConfigurationList = 8A2928202BF97E1A00B7864A /* Build configuration list for PBXNativeTarget "Pacering" */;
 			buildPhases = (
 				8A2927F52BF97E1800B7864A /* Sources */,
 				8A2927F62BF97E1800B7864A /* Frameworks */,
@@ -147,9 +191,9 @@
 			);
 			dependencies = (
 			);
-			name = pacering;
+			name = Pacering;
 			productName = pacering;
-			productReference = 8A2927F92BF97E1800B7864A /* pacering.app */;
+			productReference = 8A2927F92BF97E1800B7864A /* Pacering.app */;
 			productType = "com.apple.product-type.application";
 		};
 		8A29280B2BF97E1A00B7864A /* paceringTests */ = {
@@ -188,6 +232,65 @@
 			productReference = 8A2928162BF97E1A00B7864A /* paceringUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		8A5CAB572C85C0A200773882 /* Pacering Helper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A5CAB7F2C85C0A400773882 /* Build configuration list for PBXNativeTarget "Pacering Helper" */;
+			buildPhases = (
+				8A5CAB542C85C0A200773882 /* Sources */,
+				8A5CAB552C85C0A200773882 /* Frameworks */,
+				8A5CAB562C85C0A200773882 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pacering Helper";
+			packageProductDependencies = (
+			);
+			productName = "Pacering Helper";
+			productReference = 8A5CAB582C85C0A200773882 /* Pacering Helper.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8A5CAB652C85C0A400773882 /* Pacering HelperTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A5CAB812C85C0A400773882 /* Build configuration list for PBXNativeTarget "Pacering HelperTests" */;
+			buildPhases = (
+				8A5CAB622C85C0A400773882 /* Sources */,
+				8A5CAB632C85C0A400773882 /* Frameworks */,
+				8A5CAB642C85C0A400773882 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8A5CAB682C85C0A400773882 /* PBXTargetDependency */,
+			);
+			name = "Pacering HelperTests";
+			packageProductDependencies = (
+			);
+			productName = "Pacering HelperTests";
+			productReference = 8A5CAB662C85C0A400773882 /* Pacering HelperTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8A5CAB6F2C85C0A400773882 /* Pacering HelperUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A5CAB822C85C0A400773882 /* Build configuration list for PBXNativeTarget "Pacering HelperUITests" */;
+			buildPhases = (
+				8A5CAB6C2C85C0A400773882 /* Sources */,
+				8A5CAB6D2C85C0A400773882 /* Frameworks */,
+				8A5CAB6E2C85C0A400773882 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8A5CAB722C85C0A400773882 /* PBXTargetDependency */,
+			);
+			name = "Pacering HelperUITests";
+			packageProductDependencies = (
+			);
+			productName = "Pacering HelperUITests";
+			productReference = 8A5CAB702C85C0A400773882 /* Pacering HelperUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -195,8 +298,8 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1540;
-				LastUpgradeCheck = 1540;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					8A2927F82BF97E1800B7864A = {
 						CreatedOnToolsVersion = 15.4;
@@ -208,6 +311,17 @@
 					8A2928152BF97E1A00B7864A = {
 						CreatedOnToolsVersion = 15.4;
 						TestTargetID = 8A2927F82BF97E1800B7864A;
+					};
+					8A5CAB572C85C0A200773882 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					8A5CAB652C85C0A400773882 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 8A5CAB572C85C0A200773882;
+					};
+					8A5CAB6F2C85C0A400773882 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 8A5CAB572C85C0A200773882;
 					};
 				};
 			};
@@ -224,9 +338,12 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8A2927F82BF97E1800B7864A /* pacering */,
+				8A2927F82BF97E1800B7864A /* Pacering */,
 				8A29280B2BF97E1A00B7864A /* paceringTests */,
 				8A2928152BF97E1A00B7864A /* paceringUITests */,
+				8A5CAB572C85C0A200773882 /* Pacering Helper */,
+				8A5CAB652C85C0A400773882 /* Pacering HelperTests */,
+				8A5CAB6F2C85C0A400773882 /* Pacering HelperUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -255,6 +372,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8A5CAB562C85C0A200773882 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A5CAB642C85C0A400773882 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A5CAB6E2C85C0A400773882 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -265,6 +403,7 @@
 				8A2927FF2BF97E1800B7864A /* ContentView.swift in Sources */,
 				8A2928012BF97E1800B7864A /* Item.swift in Sources */,
 				8A2927FD2BF97E1800B7864A /* paceringApp.swift in Sources */,
+				8A9B64232C4F9B050032320A /* WorkAppsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,18 +424,49 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8A5CAB542C85C0A200773882 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A5CAB622C85C0A400773882 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A5CAB6C2C85C0A400773882 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
 		8A29280E2BF97E1A00B7864A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8A2927F82BF97E1800B7864A /* pacering */;
+			target = 8A2927F82BF97E1800B7864A /* Pacering */;
 			targetProxy = 8A29280D2BF97E1A00B7864A /* PBXContainerItemProxy */;
 		};
 		8A2928182BF97E1A00B7864A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8A2927F82BF97E1800B7864A /* pacering */;
+			target = 8A2927F82BF97E1800B7864A /* Pacering */;
 			targetProxy = 8A2928172BF97E1A00B7864A /* PBXContainerItemProxy */;
+		};
+		8A5CAB682C85C0A400773882 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A5CAB572C85C0A200773882 /* Pacering Helper */;
+			targetProxy = 8A5CAB672C85C0A400773882 /* PBXContainerItemProxy */;
+		};
+		8A5CAB722C85C0A400773882 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A5CAB572C85C0A200773882 /* Pacering Helper */;
+			targetProxy = 8A5CAB712C85C0A400773882 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -335,6 +505,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -396,6 +567,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -422,10 +594,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = pacering/pacering.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 5;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"pacering/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Pacering;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -439,15 +614,15 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.5;
+				MARKETING_VERSION = 9.0;
 				PRODUCT_BUNDLE_IDENTIFIER = panorai.pacering;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = macosx;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -458,10 +633,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = pacering/pacering.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 5;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"pacering/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Pacering;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -475,25 +653,25 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.5;
+				MARKETING_VERSION = 9.0;
 				PRODUCT_BUNDLE_IDENTIFIER = panorai.pacering;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = macosx;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 		8A2928242BF97E1A00B7864A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				MACOSX_DEPLOYMENT_TARGET = 14.4;
@@ -512,10 +690,10 @@
 		8A2928252BF97E1A00B7864A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				MACOSX_DEPLOYMENT_TARGET = 14.4;
@@ -534,9 +712,9 @@
 		8A2928272BF97E1A00B7864A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				MACOSX_DEPLOYMENT_TARGET = 14.4;
@@ -555,9 +733,9 @@
 		8A2928282BF97E1A00B7864A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				MACOSX_DEPLOYMENT_TARGET = 14.4;
@@ -573,6 +751,136 @@
 			};
 			name = Release;
 		};
+		8A5CAB782C85C0A400773882 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Pacering Helper/Pacering_Helper.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainNibFile = MainMenu;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "panorai.Pacering-Helper";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		8A5CAB792C85C0A400773882 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Pacering Helper/Pacering_Helper.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainNibFile = MainMenu;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "panorai.Pacering-Helper";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		8A5CAB7A2C85C0A400773882 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "panorai.Pacering-HelperTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pacering Helper.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Pacering Helper";
+			};
+			name = Debug;
+		};
+		8A5CAB7B2C85C0A400773882 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "panorai.Pacering-HelperTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pacering Helper.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Pacering Helper";
+			};
+			name = Release;
+		};
+		8A5CAB7C2C85C0A400773882 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "panorai.Pacering-HelperUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "Pacering Helper";
+			};
+			name = Debug;
+		};
+		8A5CAB7D2C85C0A400773882 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "panorai.Pacering-HelperUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "Pacering Helper";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -585,7 +893,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8A2928202BF97E1A00B7864A /* Build configuration list for PBXNativeTarget "pacering" */ = {
+		8A2928202BF97E1A00B7864A /* Build configuration list for PBXNativeTarget "Pacering" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8A2928212BF97E1A00B7864A /* Debug */,
@@ -608,6 +916,33 @@
 			buildConfigurations = (
 				8A2928272BF97E1A00B7864A /* Debug */,
 				8A2928282BF97E1A00B7864A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8A5CAB7F2C85C0A400773882 /* Build configuration list for PBXNativeTarget "Pacering Helper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A5CAB782C85C0A400773882 /* Debug */,
+				8A5CAB792C85C0A400773882 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8A5CAB812C85C0A400773882 /* Build configuration list for PBXNativeTarget "Pacering HelperTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A5CAB7A2C85C0A400773882 /* Debug */,
+				8A5CAB7B2C85C0A400773882 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8A5CAB822C85C0A400773882 /* Build configuration list for PBXNativeTarget "Pacering HelperUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A5CAB7C2C85C0A400773882 /* Debug */,
+				8A5CAB7D2C85C0A400773882 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
