@@ -68,7 +68,20 @@ extension String {
             "WORK": [.english: "WORK", .chinese: "工作"],
             "apps selected as work applications": [.english: "apps selected as work applications", .chinese: "个应用程序被选为工作应用程序"],
             "Save Work Apps": [.english: "Save Work Apps", .chinese: "保存工作应用程序"],
-            "AI Analysis": [.english: "AI Analysis", .chinese: "AI分析"]
+            "AI Analysis": [.english: "AI Analysis", .chinese: "AI分析"],
+            "AI Insights": [.english: "AI Insights", .chinese: "AI洞察"],
+            "Intelligent insights about your productivity": [.english: "Intelligent insights about your productivity", .chinese: "关于您工作效率的智能洞察"],
+            "Generate Analysis": [.english: "Generate Analysis", .chinese: "生成分析"],
+            "Analyzing...": [.english: "Analyzing...", .chinese: "分析中..."],
+            "Ready for AI Analysis": [.english: "Ready for AI Analysis", .chinese: "准备进行AI分析"],
+            "Today's Activity Preview": [.english: "Today's Activity Preview", .chinese: "今日活动预览"],
+            "Apps Used": [.english: "Apps Used", .chinese: "使用的应用"],
+            "Total Time": [.english: "Total Time", .chinese: "总时间"],
+            "Error": [.english: "Error", .chinese: "错误"],
+            "Click the 'Generate Analysis' button to get intelligent insights about your productivity patterns": [.english: "Click the 'Generate Analysis' button to get intelligent insights about your productivity patterns", .chinese: "点击'生成分析'按钮，获取有关您工作效率模式的智能洞察"],
+            "Copy": [.english: "Copy", .chinese: "复制"],
+            "Copied!": [.english: "Copied!", .chinese: "已复制！"],
+            "Analysis Results": [.english: "Analysis Results", .chinese: "分析结果"]
         ]
         
         return translations[self]?[language] ?? self

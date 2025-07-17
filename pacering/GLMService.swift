@@ -8,6 +8,7 @@ class GLMService: ObservableObject {
     
     @Published var isLoading = false
     @Published var analysisResult: String = ""
+    @Published var analysisResultChinese: String = ""
     @Published var errorMessage: String = ""
     
     private var cancellables = Set<AnyCancellable>()
@@ -16,8 +17,57 @@ class GLMService: ObservableObject {
         isLoading = true
         errorMessage = ""
         
-        let prompt = generatePrompt(from: activityRecords)
+        // Generate both English and Chinese analysis
+        generateBilingualAnalysis(activityRecords)
+    }
+    
+    private func generateBilingualAnalysis(_ activityRecords: [ActivityRecord]) {
+        let group = DispatchGroup()
+        var englishResult = ""
+        var chineseResult = ""
+        var hasError = false
         
+        // Generate English analysis
+        group.enter()
+        let englishPrompt = generatePrompt(from: activityRecords, language: .english)
+        makeAPIRequest(prompt: englishPrompt) { result in
+            switch result {
+            case .success(let response):
+                englishResult = response
+            case .failure(let error):
+                hasError = true
+                self.errorMessage = "English analysis failed: \(error.localizedDescription)"
+            }
+            group.leave()
+        }
+        
+        // Generate Chinese analysis
+        group.enter()
+        let chinesePrompt = generatePrompt(from: activityRecords, language: .chinese)
+        makeAPIRequest(prompt: chinesePrompt) { result in
+            switch result {
+            case .success(let response):
+                chineseResult = response
+            case .failure(let error):
+                if !hasError {
+                    hasError = true
+                    self.errorMessage = "Chinese analysis failed: \(error.localizedDescription)"
+                }
+            }
+            group.leave()
+        }
+        
+        // Wait for both requests to complete
+        group.notify(queue: .main) {
+            self.isLoading = false
+            if !hasError {
+                self.analysisResult = englishResult
+                self.analysisResultChinese = chineseResult
+            }
+        }
+    }
+    
+    private func makeAPIRequest(prompt: String, completion: @escaping (Result<String, Error>) -> Void) {
         let requestBody = GLMRequest(
             model: model,
             messages: [
@@ -28,10 +78,7 @@ class GLMService: ObservableObject {
         )
         
         guard let url = URL(string: baseURL) else {
-            DispatchQueue.main.async {
-                self.isLoading = false
-                self.errorMessage = "Invalid URL"
-            }
+            completion(.failure(NSError(domain: "GLMService", code: 1, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])))
             return
         }
         
@@ -43,39 +90,35 @@ class GLMService: ObservableObject {
         do {
             request.httpBody = try JSONEncoder().encode(requestBody)
         } catch {
-            DispatchQueue.main.async {
-                self.isLoading = false
-                self.errorMessage = "Error encoding request: \(error.localizedDescription)"
-            }
+            completion(.failure(error))
             return
         }
         
-        URLSession.shared.dataTaskPublisher(for: request)
-            .map(\.data)
-            .decode(type: GLMResponse.self, decoder: JSONDecoder())
-            .receive(on: DispatchQueue.main)
-            .sink(
-                receiveCompletion: { completion in
-                    self.isLoading = false
-                    switch completion {
-                    case .finished:
-                        break
-                    case .failure(let error):
-                        self.errorMessage = "Analysis failed: \(error.localizedDescription)"
-                    }
-                },
-                receiveValue: { response in
-                    if let choice = response.choices.first {
-                        self.analysisResult = choice.message.content
-                    } else {
-                        self.errorMessage = "No analysis result received"
-                    }
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            
+            guard let data = data else {
+                completion(.failure(NSError(domain: "GLMService", code: 2, userInfo: [NSLocalizedDescriptionKey: "No data received"])))
+                return
+            }
+            
+            do {
+                let response = try JSONDecoder().decode(GLMResponse.self, from: data)
+                if let choice = response.choices.first {
+                    completion(.success(choice.message.content))
+                } else {
+                    completion(.failure(NSError(domain: "GLMService", code: 3, userInfo: [NSLocalizedDescriptionKey: "No analysis result received"])))
                 }
-            )
-            .store(in: &cancellables)
+            } catch {
+                completion(.failure(error))
+            }
+        }.resume()
     }
     
-    private func generatePrompt(from records: [ActivityRecord]) -> String {
+    private func generatePrompt(from records: [ActivityRecord], language: AppLanguage = .english) -> String {
         let today = Date()
         let formatter = DateFormatter()
         formatter.dateStyle = .full
@@ -112,30 +155,59 @@ class GLMService: ObservableObject {
             return "- \(app): \(String(format: "%.1f", hours))h (\(minutes)m) \(isWorkApp ? "[Work App]" : "[Personal]")"
         }.joined(separator: "\n")
         
-        return """
-        Please analyze my productivity data for \(todayString) and provide a fun, engaging, and insightful summary. Here's my activity data:
+        if language == .english {
+            return """
+            Please analyze my productivity data for \(todayString) and provide a fun, engaging, and insightful summary. Here's my activity data:
 
-        📊 **Overall Statistics:**
-        - Total Active Time: \(String(format: "%.1f", totalActiveHours)) hours
-        - Work Time: \(String(format: "%.1f", workTimeHours)) hours
-        - Personal Time: \(String(format: "%.1f", totalActiveHours - workTimeHours)) hours
-        - Number of Applications Used: \(appUsage.count)
+            ## 📊 Overall Statistics:
+            - **Total Active Time:** \(String(format: "%.1f", totalActiveHours)) hours
+            - **Work Time:** \(String(format: "%.1f", workTimeHours)) hours
+            - **Personal Time:** \(String(format: "%.1f", totalActiveHours - workTimeHours)) hours
+            - **Number of Applications Used:** \(appUsage.count)
 
-        📱 **Application Usage Breakdown:**
-        \(appBreakdown)
+            ## 📱 Application Usage Breakdown:
+            \(appBreakdown)
 
-        🎯 **Work Applications:** \(workApps.joined(separator: ", "))
+            ## 🎯 Work Applications:
+            \(workApps.joined(separator: ", "))
 
-        Please provide a fun and engaging analysis that includes:
-        1. A catchy title or emoji-rich summary
-        2. Key insights about my productivity patterns
-        3. Most productive hours/applications
-        4. Balance between work and personal time
-        5. Fun observations or gentle suggestions for improvement
-        6. A motivational closing remark
+            Please provide a fun and engaging analysis in **markdown format** that includes:
+            1. **A catchy title or emoji-rich summary**
+            2. **Key insights about my productivity patterns**
+            3. **Most productive hours/applications**
+            4. **Balance between work and personal time**
+            5. **Fun observations or gentle suggestions for improvement**
+            6. **A motivational closing remark**
 
-        Make it personal, encouraging, and slightly humorous while being informative. Use emojis to make it more engaging!
-        """
+            Make it personal, encouraging, and slightly humorous while being informative. Use emojis, bullet points, and proper markdown formatting to make it more engaging!
+            """
+        } else {
+            return """
+            请分析我在\(todayString)的工作效率数据，并提供一个有趣、引人入胜且富有洞察力的总结。以下是我的活动数据：
+
+            ## 📊 总体统计：
+            - **总活跃时间：** \(String(format: "%.1f", totalActiveHours)) 小时
+            - **工作时间：** \(String(format: "%.1f", workTimeHours)) 小时
+            - **个人时间：** \(String(format: "%.1f", totalActiveHours - workTimeHours)) 小时
+            - **使用的应用程序数量：** \(appUsage.count)
+
+            ## 📱 应用程序使用详情：
+            \(appBreakdown)
+
+            ## 🎯 工作应用程序：
+            \(workApps.joined(separator: ", "))
+
+            请提供一个有趣且引人入胜的**markdown格式**分析，包括：
+            1. **吸引人的标题或富含表情符号的摘要**
+            2. **关于我的工作效率模式的关键洞察**
+            3. **最高效的时间段/应用程序**
+            4. **工作与个人时间的平衡**
+            5. **有趣的观察或温和的改进建议**
+            6. **激励性的结尾语**
+
+            请用个人化、鼓励性和略带幽默的方式提供信息。使用表情符号、项目符号和适当的markdown格式使其更具吸引力！
+            """
+        }
     }
 }
 
