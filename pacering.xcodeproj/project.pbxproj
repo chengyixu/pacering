@@ -16,6 +16,8 @@
 		8A29281B2BF97E1A00B7864A /* paceringUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A29281A2BF97E1A00B7864A /* paceringUITests.swift */; };
 		8A29281D2BF97E1A00B7864A /* paceringUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A29281C2BF97E1A00B7864A /* paceringUITestsLaunchTests.swift */; };
 		8A9B64232C4F9B050032320A /* WorkAppsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9B64222C4F9B050032320A /* WorkAppsView.swift */; };
+		8AC0DE5B2E28D0D000178E8E /* GLMService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC0DE5A2E28D0D000178E8E /* GLMService.swift */; };
+		8AC0DE5C2E28D0D000178E8E /* AIAnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC0DE592E28D0D000178E8E /* AIAnalysisView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,8 @@
 		8A5CAB662C85C0A400773882 /* Pacering HelperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pacering HelperTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A5CAB702C85C0A400773882 /* Pacering HelperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pacering HelperUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A9B64222C4F9B050032320A /* WorkAppsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkAppsView.swift; sourceTree = "<group>"; };
+		8AC0DE592E28D0D000178E8E /* AIAnalysisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIAnalysisView.swift; sourceTree = "<group>"; };
+		8AC0DE5A2E28D0D000178E8E /* GLMService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLMService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +146,8 @@
 			children = (
 				8A2927FC2BF97E1800B7864A /* paceringApp.swift */,
 				8A2927FE2BF97E1800B7864A /* ContentView.swift */,
+				8AC0DE592E28D0D000178E8E /* AIAnalysisView.swift */,
+				8AC0DE5A2E28D0D000178E8E /* GLMService.swift */,
 				8A9B64222C4F9B050032320A /* WorkAppsView.swift */,
 				8A2928002BF97E1800B7864A /* Item.swift */,
 				8A2928022BF97E1A00B7864A /* Assets.xcassets */,
@@ -402,6 +408,8 @@
 			files = (
 				8A2927FF2BF97E1800B7864A /* ContentView.swift in Sources */,
 				8A2928012BF97E1800B7864A /* Item.swift in Sources */,
+				8AC0DE5B2E28D0D000178E8E /* GLMService.swift in Sources */,
+				8AC0DE5C2E28D0D000178E8E /* AIAnalysisView.swift in Sources */,
 				8A2927FD2BF97E1800B7864A /* paceringApp.swift in Sources */,
 				8A9B64232C4F9B050032320A /* WorkAppsView.swift in Sources */,
 			);

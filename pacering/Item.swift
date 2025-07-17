@@ -55,6 +55,9 @@ class ActivityLogger: ObservableObject {
             UserDefaults.standard.set(currentSessionId.uuidString, forKey: "currentSessionId")
         }
     }
+    
+    // AI Analysis Service
+    @Published var glmService = GLMService()
 
     private var updateTimer: Timer?
     var updateInterval: TimeInterval = 30.0 // Default to 30 seconds
@@ -339,6 +342,11 @@ class ActivityLogger: ObservableObject {
         }
 
         return dailyProgresses
+    }
+    
+    func generateAIAnalysis() {
+        let todayRecords = records.filter { Calendar.current.isDate($0.startTime, inSameDayAs: Date()) }
+        glmService.analyzeActivityData(todayRecords)
     }
 }
 

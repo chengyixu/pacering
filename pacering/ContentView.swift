@@ -67,7 +67,8 @@ extension String {
             "Personal App": [.english: "Personal App", .chinese: "个人应用"],
             "WORK": [.english: "WORK", .chinese: "工作"],
             "apps selected as work applications": [.english: "apps selected as work applications", .chinese: "个应用程序被选为工作应用程序"],
-            "Save Work Apps": [.english: "Save Work Apps", .chinese: "保存工作应用程序"]
+            "Save Work Apps": [.english: "Save Work Apps", .chinese: "保存工作应用程序"],
+            "AI Analysis": [.english: "AI Analysis", .chinese: "AI分析"]
         ]
         
         return translations[self]?[language] ?? self
@@ -227,6 +228,29 @@ struct ContentView: View {
                     .listRowBackground(Color.clear)
                     .listRowSeparator(.hidden)
                     .listRowInsets(EdgeInsets())
+                    
+                    NavigationLink(value: "AI Analysis") {
+                        HStack(spacing: 12) {
+                            Image(systemName: "brain.head.profile")
+                                .foregroundColor(selectedView == "AI Analysis" ? .white : Color(hex: "012379"))
+                                .frame(width: 20)
+                            
+                            Text("AI Analysis".localized(languageManager.currentLanguage))
+                                .font(.system(size: 14, weight: .medium))
+                                .foregroundColor(selectedView == "AI Analysis" ? .white : .primary)
+                            
+                            Spacer()
+                        }
+                        .padding(.horizontal, 12)
+                        .padding(.vertical, 8)
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(selectedView == "AI Analysis" ? Color(hex: "012379") : Color.clear)
+                        )
+                    }
+                    .listRowBackground(Color.clear)
+                    .listRowSeparator(.hidden)
+                    .listRowInsets(EdgeInsets())
                 }
                 .listStyle(PlainListStyle())
                 .scrollContentBackground(.hidden)
@@ -284,6 +308,8 @@ struct ContentView: View {
                 ProfileView(activityLogger: activityLogger, languageManager: languageManager)
             case "Work Apps":
                 WorkAppsView(activityLogger: activityLogger, languageManager: languageManager)
+            case "AI Analysis":
+                AIAnalysisView(activityLogger: activityLogger, languageManager: languageManager)
             default:
                 Text("Select a view from the sidebar")
             }
