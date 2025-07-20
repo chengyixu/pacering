@@ -22,10 +22,10 @@ struct MarkdownParser {
             } else if trimmedLine.hasPrefix("### ") {
                 elements.append(.header(String(trimmedLine.dropFirst(4)), level: 3))
             }
-            // Bold text
+            // Bold text - strip ** markers and treat as regular text
             else if trimmedLine.hasPrefix("**") && trimmedLine.hasSuffix("**") && trimmedLine.count > 4 {
                 let boldText = String(trimmedLine.dropFirst(2).dropLast(2))
-                elements.append(.bold(boldText))
+                elements.append(.text([.text(boldText)]))
             }
             // Bullet points
             else if trimmedLine.hasPrefix("- ") || trimmedLine.hasPrefix("• ") {
@@ -49,22 +49,12 @@ struct MarkdownParser {
         var elements: [InlineElement] = []
         let parts = text.components(separatedBy: "**")
         
-        for (index, part) in parts.enumerated() {
-            if index % 2 == 0 {
-                // Regular text
-                if !part.isEmpty {
-                    elements.append(.text(part))
-                }
-            } else {
-                // Bold text
-                if !part.isEmpty {
-                    elements.append(.bold(part))
-                }
-            }
-        }
+        // Simply join all parts as regular text (removing ** markers)
+        let cleanedText = parts.joined()
         
-        // If we have no elements, add the original text
-        if elements.isEmpty {
+        if !cleanedText.isEmpty {
+            elements.append(.text(cleanedText))
+        } else if !text.isEmpty {
             elements.append(.text(text))
         }
         

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A170B3E2E2D206700FFCA08 /* AchievementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A170B3D2E2D206700FFCA08 /* AchievementsView.swift */; };
 		8A2927FD2BF97E1800B7864A /* paceringApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2927FC2BF97E1800B7864A /* paceringApp.swift */; };
 		8A2927FF2BF97E1800B7864A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2927FE2BF97E1800B7864A /* ContentView.swift */; };
 		8A2928012BF97E1800B7864A /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2928002BF97E1800B7864A /* Item.swift */; };
@@ -52,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8A170B3D2E2D206700FFCA08 /* AchievementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsView.swift; sourceTree = "<group>"; };
 		8A2927F92BF97E1800B7864A /* Pacering.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pacering.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A2927FC2BF97E1800B7864A /* paceringApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = paceringApp.swift; sourceTree = "<group>"; };
 		8A2927FE2BF97E1800B7864A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 			children = (
 				8A2927FC2BF97E1800B7864A /* paceringApp.swift */,
 				8A2927FE2BF97E1800B7864A /* ContentView.swift */,
+				8A170B3D2E2D206700FFCA08 /* AchievementsView.swift */,
 				8AC0DE592E28D0D000178E8E /* AIAnalysisView.swift */,
 				8AC0DE5A2E28D0D000178E8E /* GLMService.swift */,
 				8A9B64222C4F9B050032320A /* WorkAppsView.swift */,
@@ -408,6 +411,7 @@
 			files = (
 				8A2927FF2BF97E1800B7864A /* ContentView.swift in Sources */,
 				8A2928012BF97E1800B7864A /* Item.swift in Sources */,
+				8A170B3E2E2D206700FFCA08 /* AchievementsView.swift in Sources */,
 				8AC0DE5B2E28D0D000178E8E /* GLMService.swift in Sources */,
 				8AC0DE5C2E28D0D000178E8E /* AIAnalysisView.swift in Sources */,
 				8A2927FD2BF97E1800B7864A /* paceringApp.swift in Sources */,

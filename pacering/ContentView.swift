@@ -81,7 +81,44 @@ extension String {
             "Click the 'Generate Analysis' button to get intelligent insights about your productivity patterns": [.english: "Click the 'Generate Analysis' button to get intelligent insights about your productivity patterns", .chinese: "点击'生成分析'按钮，获取有关您工作效率模式的智能洞察"],
             "Copy": [.english: "Copy", .chinese: "复制"],
             "Copied!": [.english: "Copied!", .chinese: "已复制！"],
-            "Analysis Results": [.english: "Analysis Results", .chinese: "分析结果"]
+            "Analysis Results": [.english: "Analysis Results", .chinese: "分析结果"],
+            // Tabs
+            "Analysis": [.english: "Analysis", .chinese: "分析"],
+            "Achievements": [.english: "Achievements", .chinese: "成就"],
+            // Achievements View
+            "Track your productivity milestones": [.english: "Track your productivity milestones", .chinese: "追踪您的生产力里程碑"],
+            "Unlocked": [.english: "Unlocked", .chinese: "已解锁"],
+            "Total": [.english: "Total", .chinese: "总计"],
+            "All": [.english: "All", .chinese: "全部"],
+            "Productivity": [.english: "Productivity", .chinese: "生产力"],
+            "Consistency": [.english: "Consistency", .chinese: "一致性"],
+            "Exploration": [.english: "Exploration", .chinese: "探索"],
+            "Milestones": [.english: "Milestones", .chinese: "里程碑"],
+            "Special": [.english: "Special", .chinese: "特殊"],
+            // Achievement Titles
+            "First Hour": [.english: "First Hour", .chinese: "第一小时"],
+            "Workday Warrior": [.english: "Workday Warrior", .chinese: "工作日战士"],
+            "Productivity Master": [.english: "Productivity Master", .chinese: "生产力大师"],
+            "Week Streak": [.english: "Week Streak", .chinese: "周连续"],
+            "Monthly Commitment": [.english: "Monthly Commitment", .chinese: "月度承诺"],
+            "App Explorer": [.english: "App Explorer", .chinese: "应用探索者"],
+            "Multitasker": [.english: "Multitasker", .chinese: "多任务处理者"],
+            "Early Bird": [.english: "Early Bird", .chinese: "早起鸟"],
+            "Night Owl": [.english: "Night Owl", .chinese: "夜猫子"],
+            "Perfect Balance": [.english: "Perfect Balance", .chinese: "完美平衡"],
+            "Goal Crusher": [.english: "Goal Crusher", .chinese: "目标粉碎者"],
+            // Achievement Descriptions
+            "Complete your first hour of tracked activity": [.english: "Complete your first hour of tracked activity", .chinese: "完成您的第一个小时的跟踪活动"],
+            "Complete 8 hours of work in a single day": [.english: "Complete 8 hours of work in a single day", .chinese: "在一天内完成8小时的工作"],
+            "Accumulate 100 hours of work time": [.english: "Accumulate 100 hours of work time", .chinese: "累积100小时的工作时间"],
+            "Track activity for 7 consecutive days": [.english: "Track activity for 7 consecutive days", .chinese: "连续7天跟踪活动"],
+            "Track activity for 30 days": [.english: "Track activity for 30 days", .chinese: "跟踪活动30天"],
+            "Use 10 different applications": [.english: "Use 10 different applications", .chinese: "使用10个不同的应用程序"],
+            "Use 5 different apps in a single day": [.english: "Use 5 different apps in a single day", .chinese: "在一天内使用5个不同的应用"],
+            "Start working before 7 AM": [.english: "Start working before 7 AM", .chinese: "早上7点前开始工作"],
+            "Work past midnight": [.english: "Work past midnight", .chinese: "工作到午夜过后"],
+            "Achieve 50/50 work-life balance in a day": [.english: "Achieve 50/50 work-life balance in a day", .chinese: "一天内实现50/50的工作生活平衡"],
+            "Exceed your daily work goal by 20%": [.english: "Exceed your daily work goal by 20%", .chinese: "超过您的每日工作目标20%"]
         ]
         
         return translations[self]?[language] ?? self
@@ -264,6 +301,29 @@ struct ContentView: View {
                     .listRowBackground(Color.clear)
                     .listRowSeparator(.hidden)
                     .listRowInsets(EdgeInsets())
+                    
+                    NavigationLink(value: "Achievements") {
+                        HStack(spacing: 12) {
+                            Image(systemName: "trophy.fill")
+                                .foregroundColor(selectedView == "Achievements" ? .white : Color(hex: "012379"))
+                                .frame(width: 20)
+                            
+                            Text("Achievements".localized(languageManager.currentLanguage))
+                                .font(.system(size: 14, weight: .medium))
+                                .foregroundColor(selectedView == "Achievements" ? .white : .primary)
+                            
+                            Spacer()
+                        }
+                        .padding(.horizontal, 12)
+                        .padding(.vertical, 8)
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(selectedView == "Achievements" ? Color(hex: "012379") : Color.clear)
+                        )
+                    }
+                    .listRowBackground(Color.clear)
+                    .listRowSeparator(.hidden)
+                    .listRowInsets(EdgeInsets())
                 }
                 .listStyle(PlainListStyle())
                 .scrollContentBackground(.hidden)
@@ -323,6 +383,8 @@ struct ContentView: View {
                 WorkAppsView(activityLogger: activityLogger, languageManager: languageManager)
             case "AI Analysis":
                 AIAnalysisView(activityLogger: activityLogger, languageManager: languageManager)
+            case "Achievements":
+                AchievementsView(activityLogger: activityLogger, languageManager: languageManager)
             default:
                 Text("Select a view from the sidebar")
             }
