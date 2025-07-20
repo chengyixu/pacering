@@ -11,6 +11,14 @@ A macOS productivity tracking application that monitors your work time and helps
 - **Daily Goals**: Set and track daily work hour targets
 - **Visual Progress**: Clean progress circle visualization showing daily achievement
 - **History View**: Review your productivity patterns over the past 30 days
+- **AI Analysis**: Get intelligent insights about your productivity patterns powered by GLM-4
+- **Achievements System**: Unlock achievements and track milestones across 5 categories
+  - Productivity achievements (First Hour, Workday Warrior, Productivity Master)
+  - Consistency achievements (Week Streak, Monthly Commitment)
+  - Exploration achievements (App Explorer, Multitasker)
+  - Milestone achievements (Early Bird, Night Owl)
+  - Special achievements (Perfect Balance, Goal Crusher)
+- **Bilingual Support**: Full support for English and Chinese languages
 - **Auto-start Support**: Can be configured to start automatically with macOS
 - **Privacy-focused**: All data stored locally on your device
 
@@ -20,6 +28,8 @@ A macOS productivity tracking application that monitors your work time and helps
 - Today view: Hourly breakdown of application usage
 - Progress circle showing daily goal achievement
 - Historical data visualization
+- AI Analysis with markdown formatting
+- Achievements tracking with progress indicators
 
 ## Requirements
 
@@ -53,6 +63,8 @@ Download the latest release from the [Releases](https://github.com/chengyixu/pac
 2. **Set Work Apps**: Navigate to "Work Apps" and select applications that count as work
 3. **Set Daily Goal**: In Profile view, set your target work hours
 4. **Track Progress**: The app will automatically track time spent in work applications
+5. **View AI Analysis**: Click "Generate Analysis" in AI Analysis tab for insights
+6. **Check Achievements**: Monitor your progress and unlock achievements in the Achievements tab
 
 ## Privacy & Permissions
 
@@ -100,6 +112,14 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 - **每日目标**：设定并追踪每日工作小时目标
 - **可视化进度**：清晰的进度圆环显示每日完成度
 - **历史记录**：查看过去 30 天的生产力模式
+- **AI 分析**：通过 GLM-4 获取关于您工作效率模式的智能洞察
+- **成就系统**：解锁成就并跟踪 5 个类别的里程碑
+  - 生产力成就（第一小时、工作日战士、生产力大师）
+  - 一致性成就（周连续、月度承诺）
+  - 探索成就（应用探索者、多任务处理者）
+  - 里程碑成就（早起鸟、夜猫子）
+  - 特殊成就（完美平衡、目标粉碎者）
+- **双语支持**：完整支持英文和中文界面
 - **开机自启支持**：可配置随 macOS 自动启动
 - **隐私优先**：所有数据本地存储在您的设备上
 
@@ -109,6 +129,8 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 - 今日视图：应用使用时间的小时分解
 - 进度圆环显示每日目标完成情况
 - 历史数据可视化
+- AI 分析支持 Markdown 格式
+- 成就追踪带进度指示器
 
 ## 系统要求
 
@@ -142,6 +164,8 @@ open pacering.xcodeproj
 2. **设置工作应用**：进入"工作应用"页面，选择计为工作的应用程序
 3. **设定每日目标**：在个人资料视图中，设置您的目标工作小时数
 4. **追踪进度**：应用将自动追踪在工作应用程序中花费的时间
+5. **查看 AI 分析**：在 AI 分析标签页点击"生成分析"获取洞察
+6. **查看成就**：在成就标签页监控您的进度并解锁成就
 
 ## 隐私与权限
 
