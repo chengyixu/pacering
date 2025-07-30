@@ -18,9 +18,22 @@ A macOS productivity tracking application that monitors your work time and helps
   - Exploration achievements (App Explorer, Multitasker)
   - Milestone achievements (Early Bird, Night Owl)
   - Special achievements (Perfect Balance, Goal Crusher)
+- **Dark Mode Support**: Full dark mode support with automatic theme switching
+- **Performance Optimized**: Smooth performance with debounced updates and intelligent caching
 - **Bilingual Support**: Full support for English and Chinese languages
 - **Auto-start Support**: Can be configured to start automatically with macOS
 - **Privacy-focused**: All data stored locally on your device
+
+## What's New
+
+### Latest Updates
+- **Dark Mode Support**: The app now fully supports macOS dark mode with automatic theme switching
+- **Performance Improvements**: 
+  - Implemented intelligent caching for window titles (30-second cache)
+  - Added debounced updates to reduce UI refresh frequency
+  - Optimized data persistence with debounced UserDefaults saves
+  - Limited resource-intensive operations to browser applications only
+- **Enhanced UI**: Semantic colors that adapt to system appearance preferences
 
 ## Screenshots
 
@@ -119,9 +132,22 @@ Contributions are welcome! Please feel free to submit a Pull Request.
   - 探索成就（应用探索者、多任务处理者）
   - 里程碑成就（早起鸟、夜猫子）
   - 特殊成就（完美平衡、目标粉碎者）
+- **深色模式支持**：完整的深色模式支持，自动跟随系统主题切换
+- **性能优化**：通过防抖更新和智能缓存实现流畅的性能表现
 - **双语支持**：完整支持英文和中文界面
 - **开机自启支持**：可配置随 macOS 自动启动
 - **隐私优先**：所有数据本地存储在您的设备上
+
+## 最新更新
+
+### 最近更新内容
+- **深色模式支持**：应用现已完全支持 macOS 深色模式，自动跟随系统主题切换
+- **性能改进**：
+  - 实现了窗口标题的智能缓存（30秒缓存）
+  - 添加了防抖更新以减少 UI 刷新频率
+  - 通过防抖 UserDefaults 保存优化了数据持久化
+  - 将资源密集型操作限制在浏览器应用程序中
+- **界面增强**：采用语义化颜色，自动适应系统外观偏好
 
 ## 截图
 
