@@ -37,11 +37,11 @@ struct ActivityRecord: Identifiable, Codable {
 }
 
 class ActivityLogger: ObservableObject {
-    @Published var records = [ActivityRecord]() {
-        didSet {
-            saveRecords()
-        }
-    }
+    @Published var records = [ActivityRecord]()
+    private var cancellables = Set<AnyCancellable>()
+    private var saveDebouncer: Timer?
+    private var windowTitleCache: [String: (title: String?, timestamp: Date)] = [:]
+    private let cacheExpiration: TimeInterval = 30
     
     @Published var workApps: [String] = [] {
         didSet {
@@ -79,6 +79,14 @@ class ActivityLogger: ObservableObject {
         loadWorkApps() // Load work apps from storage
         checkAndResetDailyLogs()
         startPeriodicChecks()
+        
+        // Set up debounced saving
+        $records
+            .debounce(for: .seconds(3), scheduler: DispatchQueue.main)
+            .sink { [weak self] _ in
+                self?.saveRecords()
+            }
+            .store(in: &cancellables)
     }
 
     func startLogging(withInterval interval: TimeInterval) {
@@ -101,7 +109,8 @@ class ActivityLogger: ObservableObject {
             return
         }
 
-        let windowTitle = getWindowTitle(for: appName)
+        // Use cached window title for better performance
+        let windowTitle = getCachedWindowTitle(for: appName)
         let now = Date()
         
         if let lastRecord = records.last, 
@@ -109,7 +118,9 @@ class ActivityLogger: ObservableObject {
            lastRecord.windowTitle == windowTitle,
            Calendar.current.isDateInToday(lastRecord.startTime) {
             DispatchQueue.main.async {
-                self.records[self.records.count - 1].endTime = now
+                if self.records.count > 0 {
+                    self.records[self.records.count - 1].endTime = now
+                }
             }
         } else {
             let newRecord = ActivityRecord(
@@ -125,6 +136,26 @@ class ActivityLogger: ObservableObject {
                 self.records.append(newRecord)
             }
         }
+    }
+    
+    private func getCachedWindowTitle(for appName: String) -> String? {
+        // Check cache first
+        if let cached = windowTitleCache[appName],
+           Date().timeIntervalSince(cached.timestamp) < cacheExpiration {
+            return cached.title
+        }
+        
+        // For non-browser apps, skip window title fetching to improve performance
+        guard appName.lowercased().contains("safari") || 
+              appName.lowercased().contains("chrome") else {
+            windowTitleCache[appName] = (nil, Date())
+            return nil
+        }
+        
+        // Fetch and cache new title
+        let title = getWindowTitle(for: appName)
+        windowTitleCache[appName] = (title, Date())
+        return title
     }
     
     private func getWindowTitle(for appName: String) -> String? {

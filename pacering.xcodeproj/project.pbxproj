@@ -17,6 +17,7 @@
 		8A29281B2BF97E1A00B7864A /* paceringUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A29281A2BF97E1A00B7864A /* paceringUITests.swift */; };
 		8A29281D2BF97E1A00B7864A /* paceringUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A29281C2BF97E1A00B7864A /* paceringUITestsLaunchTests.swift */; };
 		8A9B64232C4F9B050032320A /* WorkAppsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9B64222C4F9B050032320A /* WorkAppsView.swift */; };
+		8A9B64242C4F9B060032320A /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9B64252C4F9B060032320A /* Theme.swift */; };
 		8AC0DE5B2E28D0D000178E8E /* GLMService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC0DE5A2E28D0D000178E8E /* GLMService.swift */; };
 		8AC0DE5C2E28D0D000178E8E /* AIAnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC0DE592E28D0D000178E8E /* AIAnalysisView.swift */; };
 /* End PBXBuildFile section */
@@ -70,6 +71,7 @@
 		8A5CAB662C85C0A400773882 /* Pacering HelperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pacering HelperTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A5CAB702C85C0A400773882 /* Pacering HelperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pacering HelperUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A9B64222C4F9B050032320A /* WorkAppsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkAppsView.swift; sourceTree = "<group>"; };
+		8A9B64252C4F9B060032320A /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		8AC0DE592E28D0D000178E8E /* AIAnalysisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIAnalysisView.swift; sourceTree = "<group>"; };
 		8AC0DE5A2E28D0D000178E8E /* GLMService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLMService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -152,6 +154,7 @@
 				8AC0DE592E28D0D000178E8E /* AIAnalysisView.swift */,
 				8AC0DE5A2E28D0D000178E8E /* GLMService.swift */,
 				8A9B64222C4F9B050032320A /* WorkAppsView.swift */,
+				8A9B64252C4F9B060032320A /* Theme.swift */,
 				8A2928002BF97E1800B7864A /* Item.swift */,
 				8A2928022BF97E1A00B7864A /* Assets.xcassets */,
 				8A2928042BF97E1A00B7864A /* pacering.entitlements */,
@@ -416,6 +419,7 @@
 				8AC0DE5C2E28D0D000178E8E /* AIAnalysisView.swift in Sources */,
 				8A2927FD2BF97E1800B7864A /* paceringApp.swift in Sources */,
 				8A9B64232C4F9B050032320A /* WorkAppsView.swift in Sources */,
+				8A9B64242C4F9B060032320A /* Theme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -609,6 +613,7 @@
 				CURRENT_PROJECT_VERSION = 5;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"pacering/Preview Content\"";
+				DEVELOPMENT_TEAM = 4HM9JH39N5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Pacering;
@@ -648,6 +653,7 @@
 				CURRENT_PROJECT_VERSION = 5;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"pacering/Preview Content\"";
+				DEVELOPMENT_TEAM = 4HM9JH39N5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Pacering;
@@ -724,15 +730,18 @@
 		8A2928272BF97E1A00B7864A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				MACOSX_DEPLOYMENT_TARGET = 14.4;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = panorai.paceringUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = NO;
@@ -745,15 +754,18 @@
 		8A2928282BF97E1A00B7864A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				MACOSX_DEPLOYMENT_TARGET = 14.4;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = panorai.paceringUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = NO;
