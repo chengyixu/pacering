@@ -1,5 +1,9 @@
 # Pacering
 
+<a href="https://tinylaun.ch" target="_blank" rel="noopener">
+    <img src="https://tinylaun.ch/tinylaunch_badge_launching_soon.svg" alt="TinyLaunch Badge" style="width:202px; height:auto;" />
+</a>
+
 A macOS productivity tracking application that monitors your work time and helps you achieve your daily goals.
 
 [中文版本](#中文)
